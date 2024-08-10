@@ -11,8 +11,17 @@ def get_float(prompt_string: str):
     Returns:
         - A float converted from the user's input
     """
+    user_input = input(f"{prompt_string}")
 
-    pass
+    try:
+        user_input_float = float(user_input)
+        return print(user_input_float)
+    except ValueError:
+        print("Enter a number only. Try again. ")
+
+
+get_float("Please enter a number: ")
+
 
 #############################################################################################################
 # Challenge 2 -> A Function to convert miles to km
@@ -28,7 +37,7 @@ def miles_to_km(distance_in_miles: float):
         - a float representing the distance in kilometers
     """
     
-    pass
+    return float (distance_in_miles * miles_to_km)
 
 #############################################################################################################
 # Challenge 3 -> A function to calculate the total distance run in a relay
