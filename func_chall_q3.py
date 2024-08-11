@@ -12,5 +12,12 @@ def relay_distance(distance_per_runner: float, number_of_runners: float):
     Returns:
         - A float representing the total distance run.
     """
-    
-    pass
+    return distance_per_runner * number_of_runners
+
+distance_per_runner = 4.0  # Each runner covers 4 kilometers
+number_of_runners = 5      # There are 5 runners in the relay
+
+total_distance = relay_distance(distance_per_runner, number_of_runners)
+print(f"The total distance of the relay race is {total_distance} kilometers.")
+
+

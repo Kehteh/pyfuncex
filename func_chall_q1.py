@@ -1,5 +1,5 @@
-from functions_challenges import get_float
 # Challenge 1 -> A Function to get a float from the user
+
 def get_float(prompt_string: str):
     """A function that gets a float from the user and returns it.
 
@@ -10,7 +10,7 @@ def get_float(prompt_string: str):
     Returns:
         - A float converted from the user's input
     """
-    user_input = input(f"{prompt_string}")
+    user_input = input(prompt_string)
 
     try:
         user_input_float = float(user_input)

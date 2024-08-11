@@ -1,26 +1,42 @@
 #############################################################################################################
 # Challenge 1 -> A Function to get a float from the user
 
+# My version
+# def get_float(prompt_string: str):
+#     """A function that gets a float from the user and returns it.
+
+#     Arguments:
+#         - prompt_string: A string that will be shown to the user when they are 
+#             prompted to input the number.
+
+#     Returns:
+#         - A float converted from the user's input
+#     """
+#     user_input = input(prompt_string)
+
+#     try:
+#         user_input_float = float(user_input)
+#         return user_input_float
+#     except ValueError:
+#         print("Enter a number only. Try again. ")
+
+
+# get_float("Please enter a number: ")
+
+# chatGPTs version
+
 def get_float(prompt_string: str):
-    """A function that gets a float from the user and returns it.
+    while True:
+        user_input = input(prompt_string)
+        try:
+            user_input_float = float(user_input)
+            return user_input_float
+        except ValueError:
+            print("Enter a number only. Try again.")
 
-    Arguments:
-        - prompt_string: A string that will be shown to the user when they are 
-            prompted to input the number.
-
-    Returns:
-        - A float converted from the user's input
-    """
-    user_input = input(f"{prompt_string}")
-
-    try:
-        user_input_float = float(user_input)
-        return print(user_input_float)
-    except ValueError:
-        print("Enter a number only. Try again. ")
-
-
-get_float("Please enter a number: ")
+# Example of how to call the function
+result = get_float("Please enter a number: ")
+print(f"You entered: {result}")
 
 
 #############################################################################################################
@@ -37,7 +53,10 @@ def miles_to_km(distance_in_miles: float):
         - a float representing the distance in kilometers
     """
     
-    return float (distance_in_miles * miles_to_km)
+    return distance_in_miles * 1.60934
+
+kilometers = miles_to_km(7)
+print(kilometers)
 
 #############################################################################################################
 # Challenge 3 -> A function to calculate the total distance run in a relay
@@ -55,7 +74,13 @@ def relay_distance(distance_per_runner: float, number_of_runners: float):
         - A float representing the total distance run.
     """
     
-    pass
+    return distance_per_runner * number_of_runners
+
+distance_per_runner = 4.0  # Each runner covers 4 kilometers
+number_of_runners = 5      # There are 5 runners in the relay
+
+total_distance = relay_distance(distance_per_runner, number_of_runners)
+print(f"The total distance of the relay race is {total_distance} kilometers.")
 
 #############################################################################################################
 # Challenge 4 (extra tricky, no tests for this one!)
@@ -69,3 +94,21 @@ def relay_distance(distance_per_runner: float, number_of_runners: float):
 # - print the total distance run by the team, in kilometers!
 # 
 # No need for this function to accept any arguments or return any values.
+
+def relay_total_distance_kms(prompt_distance: str, prompt_runners: str):
+    # Getting user inputs
+    user_input1 = input(prompt_distance)
+    user_input_float1 = float(user_input1)
+
+    user_input2 = input(prompt_runners)
+    user_input_float2 = float(user_input2)
+
+    # Calculating the total distance in miles
+    distance_in_miles = user_input_float1 * user_input_float2
+
+    # Converting the distance to kilometers and returning the value
+    distance_in_kms = distance_in_miles * 1.60934
+    print(f"Total distance in kilometers: {distance_in_kms:.2f}")
+
+# Example of how to call the function
+relay_total_distance_kms("Please enter the distance per runner in miles: ", "Please enter the number of runners: ")

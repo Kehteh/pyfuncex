@@ -10,5 +10,11 @@ def miles_to_km(distance_in_miles: float):
     Returns
         - a float representing the distance in kilometers
     """
-    
-    return float (distance_in_miles * miles_to_km)
+    return distance_in_miles * 1.60934
+
+kilometers = miles_to_km(7)
+print(kilometers)
+
+
+
+
