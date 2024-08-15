@@ -1,0 +1,6 @@
+def calculate_everything():  
+  runner_distance_miles = get_float("What is the runner distance in miles")
+  runners_in_team = get_float("What is the runners in a team")
+  total_distance = relay_distance(miles_to_km(runner_distance_miles, runners_in_team))
+  return total_distance
+calculate_everything
